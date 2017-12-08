@@ -1,0 +1,16 @@
+
+spring:
+  application:
+    name: swagger-test
+server:
+  port: 2222
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+    #连接时间可以设置为较长
+    eureka-server-connect-timeout-seconds: 30
+    instance:
+        status-page-url: http://${spring.cloud.client.ipAddress}:${server.port}/swagger-ui.html#/
+
+api-version: v1
